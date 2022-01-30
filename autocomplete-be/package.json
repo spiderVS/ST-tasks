@@ -1,0 +1,18 @@
+{
+  "name": "autocomplete-be",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "tsc && node ./server.js",
+    "dev": "tsc --watch",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^17.0.10",
+    "typescript": "^4.5.5"
+  }
+}
