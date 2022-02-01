@@ -4,7 +4,9 @@ function Builder() {
 }
 
 Builder.prototype.sumOfArguments = function() {
-  if (arguments.length === 0) throw new Error('Arguments not defined');
+  if (arguments.length === 0) {
+    throw new Error('Arguments not defined');
+  }
   return [].slice.call(arguments).reduce(function(acc, item) {
     return acc + item;
   });
