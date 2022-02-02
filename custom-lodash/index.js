@@ -177,12 +177,7 @@ class CustomLodash {
   }
 
   omitBy(object, predicate = CustomLodash.identity) {
-    const result = {};
-    for (const key in object) {
-      const value = object[key];
-      if (!predicate(value, key)) result[key] = value;
-    }
-    return result;
+    return this.pickBy(object, (value,key) => !predicate(value, key));
   }
 
   pick(object, ...paths) {
