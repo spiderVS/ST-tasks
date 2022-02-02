@@ -168,12 +168,8 @@ class CustomLodash {
   }
 
   omit(object, ...paths) {
-    const propertyPaths = Array.isArray(paths[0]) ? paths[0] : paths;
-    const result = {};
-    for (const key in object) {
-      if (!this.includes(propertyPaths, key)) result[key] = object[key];
-    }
-    return result;
+    const propertyPaths = CustomLodash.getPaths(paths);
+    return this.omitBy(object, (value, key) => this.includes(propertyPaths, key));
   }
 
   omitBy(object, predicate = CustomLodash.identity) {
