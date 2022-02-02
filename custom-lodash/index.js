@@ -36,6 +36,10 @@ class CustomLodash {
     return value;
   }
 
+  static getPaths(paths) {
+    return Array.isArray(paths[0]) ? paths[0] : paths;
+  }
+
   chunk(array, size = 1) {
     let auxiliaryArray = [...array];
     const result = [];
@@ -182,12 +186,8 @@ class CustomLodash {
   }
 
   pick(object, ...paths) {
-    const propertyPaths = Array.isArray(paths[0]) ? paths[0] : paths;
-    const result = {};
-    for (const path of propertyPaths) {
-      if (path in object) result[path] = object[path];
-    }
-    return result;
+    const propertyPaths = CustomLodash.getPaths(paths);
+    return this.pickBy(object, (value, key) => this.includes(propertyPaths, key));
   }
 
   pickBy(object, predicate = CustomLodash.identity) {
