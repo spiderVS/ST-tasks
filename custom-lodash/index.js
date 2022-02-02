@@ -51,11 +51,7 @@ class CustomLodash {
   }
 
   compact(array) {
-    const result = [];
-    for (const elem of array) {
-      if (elem) CustomLodash.push(result, elem);
-    }
-    return result;
+    return this.filter(array, (elem) => !!elem);
   }
 
   drop(array, n = 1) {
