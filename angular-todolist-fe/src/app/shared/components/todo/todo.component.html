@@ -1,0 +1,29 @@
+<div class="todo-item" [class.done]="todo.completed">
+  <div class="left-side">
+    <input
+      type="checkbox"
+      class="cb"
+      [checked]="todo.completed"
+      #checkbox
+      (change)="onChangeStatus(checkbox.checked)"
+    />
+    <p *ngIf="!editMode; else edit" [appLineThrough]="todo.completed">
+      {{ todo.title | uppercase_custom }}
+    </p>
+    <ng-template #edit>
+      <input
+        class="task-input"
+        [(ngModel)]="editedTask.title"
+        (keyup.enter)="onSaveItem()"
+        placeholder="Type something..."
+        autocomplete="off"
+        autofocus
+      />
+    </ng-template>
+  </div>
+  <div class="control-panel">
+    <button class="btn btn-save" *ngIf="editMode" (click)="onSaveItem()">Save</button>
+    <button class="btn btn-edit" *ngIf="!editMode" (click)="onEdit()">Edit</button>
+    <button class="btn btn-delete" (click)="onDeleteItem()">Delete</button>
+  </div>
+</div>

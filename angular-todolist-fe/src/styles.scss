@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+button {
+  border: none;
+  cursor: pointer;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+app-root {
+  max-width: 800px;
+  width: 100%;
+  padding: 15px;
+  background-color: #eeeeee;
+  border-radius: 10px;
+}

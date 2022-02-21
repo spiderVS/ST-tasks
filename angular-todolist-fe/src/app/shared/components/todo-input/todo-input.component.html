@@ -1,0 +1,12 @@
+<div class="input-container">
+  <input
+    class="form-control"
+    name="name"
+    [formControl]="taskName"
+    (keyup.enter)="onAddTask()"
+    placeholder="Please input task name"
+    autocomplete="off"
+    autofocus
+  />
+  <button class="btn btn-default" (click)="onAddTask()">Add task</button>
+</div>

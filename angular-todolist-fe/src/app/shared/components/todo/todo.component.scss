@@ -1,0 +1,94 @@
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 30px;
+  min-height: 60px;
+  background-color: #cfcfcf;
+  margin: 10px 0 0 0;
+  padding: 10px 10px;
+  border: 1px solid rgb(181, 150, 212);
+  border-radius: 5px;
+  background-color: #dedede;
+
+  &.done {
+    background-color: #d6e8f5;
+  }
+
+  &.deleted {
+    transition: 0.35s;
+    background-color: #fc9e9e;
+  }
+
+  .task-input {
+    width: 100%;
+  }
+}
+
+.left-side,
+.control-panel {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.left-side {
+  width: 100%;
+
+  .task-input {
+    height: 40px;
+    padding: 0 10px;
+    border-radius: 5px;
+    border: none;
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+  }
+}
+
+.control-panel {
+  .btn {
+    height: 40px;
+    width: 50px;
+    color: white;
+    border-radius: 5px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    transition: background-color 0.25s;
+  }
+
+  .btn-edit {
+    background-color: #66acdb;
+
+    &:hover {
+      background-color: #99cff3;
+    }
+
+    &:active {
+      background-color: #3fa7ec;
+    }
+  }
+
+  .btn-delete {
+    background-color: #f07576;
+
+    &:hover {
+      background-color: #fc9e9e;
+    }
+
+    &:active {
+      background-color: #ee4c4c;
+    }
+  }
+
+  .btn-save {
+    background-color: #40ce5e;
+
+    &:hover {
+      background-color: #87da99;
+    }
+
+    &:active {
+      background-color: #25ac42;
+    }
+  }
+}
