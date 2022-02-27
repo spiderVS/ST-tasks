@@ -5,6 +5,9 @@ export class Controller {
   private model: Model;
   private view: View;
 
+  private list: HTMLElement | null = null;
+  public data: string[] = [];
+
   constructor() {
     this.model = new Model();
     this.view = new View();
@@ -14,21 +17,34 @@ export class Controller {
     const data = this.model.getData(requestStr);
     const scrollableList = this.view.renderResult(data);
     if (scrollableList) {
-      this.setScrollListener(data, scrollableList);
+      this.list = scrollableList;
+      this.data = data;
+      this.setScrollListener();
     }
   }
 
-  setScrollListener(data: string[], list: HTMLElement) {
-    list.addEventListener('scroll', () => {
-      if (list.scrollTop + list.clientHeight >= list.scrollHeight) {
-        this.view.viewMore(data);
+  scrollHandler = () => {
+    if (this.list) {
+      if (this.list.scrollTop + this.list.clientHeight >= this.list.scrollHeight) {
+        this.view.viewMore(this.data);
       }
-    });
+    }
+  }
+
+  setScrollListener() {
+    if (this.list) {
+      this.list.addEventListener('scroll', this.scrollHandler);
+    }
   }
 
   start(): void {
     const input = this.view.render();
     input.addEventListener("input", () => {
+      if (this.list) {
+        this.list.removeEventListener('scroll', this.scrollHandler);
+      }
+      this.list = null;
+      this.data = [];
       this.search(input.value);
     });
   }
