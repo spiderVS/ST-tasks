@@ -3,8 +3,13 @@ import cities from '../data/cities.json'
 
 export class Model {
 
+  private autocomplete: (str: string) => Array<string> | [];
+
+  constructor() {
+    this.autocomplete = createAutoComplete(cities);
+  }
+
   getData(request: string): Array<string> {
-    const autocomplete: (str: string) => Array<string> | [] = createAutoComplete(cities);
-    return autocomplete(request);
+    return this.autocomplete(request);
   }
 }
