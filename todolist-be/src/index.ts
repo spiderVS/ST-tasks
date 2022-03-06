@@ -1,10 +1,11 @@
-import dotenv from "dotenv"
 import express from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
+import dotenv from "dotenv";
+
+import { connectDb } from './providers/Database';
 
 import router from './routes/Router';
-import { connectDb } from './providers/Database';
 
 dotenv.config();
 const port = process.env.PORT || 8000;
@@ -21,7 +22,7 @@ app.all('*', (req, res) => {
 const start = async () => {
   await connectDb();
   app.listen(port, () => {
-    console.log(`Server running at https://localhost:${port}`);
+    console.log(`Server running at http://localhost:${port}`);
   })
   .on("error", (err: Error) => {
     console.log('Error in server setup:', err.message)

@@ -1,6 +1,7 @@
 import { ITodo } from "../interfaces/models/todo";
 import TodoModel from '../models/Todo'
 import { Request, Response, NextFunction } from "express";
+import jsonstream from 'jsonstream';
 
 const checkQuery = async (req: Request, res: Response, next: NextFunction) => {
   const { page, limit } = req.query;
@@ -11,23 +12,18 @@ const checkQuery = async (req: Request, res: Response, next: NextFunction) => {
       const pageToNum: number = Number(page);
       const limitToNum: number = Number(limit);
 
-      const todos = await TodoModel
-        .find(
-          { deletedAt: null },
-          {
-            deletedAt: 0,
-            __v: 0
-          })
-        .limit(limitToNum)
-        .skip((pageToNum - 1) * limitToNum)
-        .exec();
+      TodoModel.find(
+        { deletedAt: null },
+        {
+          deletedAt: 0,
+          __v: 0
+        })
+      .limit(limitToNum)
+      .skip((pageToNum - 1) * limitToNum)
+      .cursor()
+      .pipe(jsonstream.stringify())
+      .pipe(res.type('json'));
 
-      const count = await TodoModel.countDocuments({ deletedAt: null });
-      res.status(200).json({
-        todos,
-        totalPages: Math.ceil(count / limitToNum),
-        currentPage: pageToNum
-      });
     } catch(err: unknown) {
       if (err instanceof Error) {
         console.log('[ERROR]', err.message);
@@ -37,15 +33,17 @@ const checkQuery = async (req: Request, res: Response, next: NextFunction) => {
   }
 }
 
-const getAll = async (req: Request, res: Response) => {
+const getAll = (req: Request, res: Response) => {
   try {
-    const todos = await TodoModel.find(
+    TodoModel.find(
       { deletedAt: null },
       {
         deletedAt: 0,
         __v: 0
-      });
-    res.json(todos);
+      })
+    .cursor()
+    .pipe(jsonstream.stringify())
+    .pipe(res.type('json'));
   } catch {
     res.status(500).json({});
   }
@@ -62,9 +60,6 @@ const getOne = async (req: Request, res: Response) => {
         __v: 0
       })
     .findOne({ deletedAt: null });
-    if (!todo) {
-      throw new Error(`Element with id ${id} not found`);
-    }
     res.json(todo);
   } catch(err: unknown) {
     if (err instanceof Error) {
