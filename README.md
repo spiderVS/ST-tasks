@@ -1,19 +1,23 @@
-# Anatol Dauliud
+### TODO List FE
 
-## Polotsk State University / Radio Engineering Faculty '2008 - Electronics engineer
+Simple ToDo list on Angular with HTTP-requests to back-end
 
-**E-mail: fuzzy003@gmail.com**
+- TS
+- Angular
+- HTTP-requests to back-end - used mock-API `https://jsonplaceholder.typicode.com/todos`
+- **Custom** @Pipe - uppercase text
+- Custom @Directive - strikethrough text for checked todos
+- Used Interceptor for create URL
+- Template-driven form for todos
 
-Phone: +375(29)884-02-02
+### Screenshot:
 
-Previous work experience:
+![image](https://user-images.githubusercontent.com/79773329/158948166-0ea8fd26-34e8-40d3-9e66-c378d5cce7e9.png)
 
-1. 08/2008 – 08/2010 - Polotsk State University - Department of Repair of Computers and Radio-Electronic Devices / **Electronics engineer**
+### Start
 
-2. 11/2010 – 07/2015 - Stock Company SPECIAL DESIGN AND TECHNOLOGICAL BUREAU OF KOLTSOV (Nicole Group - St. Petersburg) – New Solutions Group / **Product design engineer**
-
-3. 04/2016 – present - Technoton Engineering LLC (R&D division of Technoton) / **Product design engineer**
-
----
-
-If you want to see the full CV, please follow this link - [Anatol Dauliud CV](https://spidervs.github.io/rsschool-cv/)
+1. `git clone git clone -b todolist-fe --single-branch https://github.com/spiderVS/rs-st-tasks.git`
+2. `cd angular-todolist-fe`
+3. `npm i`
+4. `ng serve`
+5. Open http://localhost:4200/ in your browser.
