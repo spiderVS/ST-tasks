@@ -16,7 +16,7 @@ Simple ToDo list on Angular with HTTP-requests to back-end
 
 ### Start
 
-1. `git clone git clone -b todolist-fe --single-branch https://github.com/spiderVS/rs-st-tasks.git`
+1. `git clone -b todolist-fe --single-branch https://github.com/spiderVS/rs-st-tasks.git`
 2. `cd angular-todolist-fe`
 3. `npm i`
 4. `ng serve`
