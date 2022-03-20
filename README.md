@@ -1,19 +1,17 @@
-# Anatol Dauliud
+# Autocomplete UI
 
-## Polotsk State University / Radio Engineering Faculty '2008 - Electronics engineer
+## Folder name: auto-complete-ui
 
-**E-mail: fuzzy003@gmail.com**
+Create a simple autocomplete UI based on **your auto-complete** as an engine.
 
-Phone: +375(29)884-02-02
+UI should contain input and results (in any suitable form suitable for you). The component should be rendered fully by JavaScript (document.body is empty).
 
-Previous work experience:
+You can add CSS styles as a separate file.
 
-1. 08/2008 – 08/2010 - Polotsk State University - Department of Repair of Computers and Radio-Electronic Devices / **Electronics engineer**
+In auto-complete-ui folder, you **MUST** put a readme file with an instruction how to launch your app
 
-2. 11/2010 – 07/2015 - Stock Company SPECIAL DESIGN AND TECHNOLOGICAL BUREAU OF KOLTSOV (Nicole Group - St. Petersburg) – New Solutions Group / **Product design engineer**
+Please define a project structure and (optionally) use patterns if they will be needed.
 
-3. 04/2016 – present - Technoton Engineering LLC (R&D division of Technoton) / **Product design engineer**
+**Extra:** Infinite scroll
 
----
-
-If you want to see the full CV, please follow this link - [Anatol Dauliud CV](https://spidervs.github.io/rsschool-cv/)
+### Let's see my deploy on https://auto-complete-ui-spidervs.netlify.app/
