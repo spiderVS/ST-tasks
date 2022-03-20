@@ -1,19 +1,40 @@
-# Anatol Dauliud
+# Autocomplete Backend
 
-## Polotsk State University / Radio Engineering Faculty '2008 - Electronics engineer
+## Folder name: autocomplete-be
 
-**E-mail: fuzzy003@gmail.com**
+**Task:** to implement a backend for your auto-complete function. Backend should implement following api:
 
-Phone: +375(29)884-02-02
+```js
+GET /?complete=java
+```
 
-Previous work experience:
+as response expected to get all suggestions for `java`
 
-1. 08/2008 – 08/2010 - Polotsk State University - Department of Repair of Computers and Radio-Electronic Devices / **Electronics engineer**
+### Requirements:
 
-2. 11/2010 – 07/2015 - Stock Company SPECIAL DESIGN AND TECHNOLOGICAL BUREAU OF KOLTSOV (Nicole Group - St. Petersburg) – New Solutions Group / **Product design engineer**
+1. You are not allowed to use any framework to work with HTTP server (express/koa/sails)
+1. Response must be a valid JSON with a valid contentType header.
+1. All uknown URLs must return 404
+1. You must use cities.json as a data for engine.
+1. You are only allowed to change the export statement (if required) in your original autocomplete.
+1. Usage of TS is required
 
-3. 04/2016 – present - Technoton Engineering LLC (R&D division of Technoton) / **Product design engineer**
+**Extras:**
+
+- HTTP cache headers (static)
+- HTTP cache headers (dynamic, last modified changes when cities.json changes)
+- Deployment (somewhere, link in PR)
 
 ---
 
-If you want to see the full CV, please follow this link - [Anatol Dauliud CV](https://spidervs.github.io/rsschool-cv/)
+### My deploy: https://autocomplete-be-spidervs.herokuapp.com/?complete=
+You can use browser or `fetchAPI` for example. 
+
+Change query `complete` and see result:
+
+`?complete=au`
+
+
+If you choose `fetch`: 
+
+`fetch('https://autocomplete-be-spidervs.herokuapp.com/?complete=aus').then(res => res.json()).then(data => console.log(data))`
