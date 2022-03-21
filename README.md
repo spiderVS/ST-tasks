@@ -1,19 +1,40 @@
-# Anatol Dauliud
+#  json2csv
 
-## Polotsk State University / Radio Engineering Faculty '2008 - Electronics engineer
+## Folder name: json2csv
 
-**E-mail: fuzzy003@gmail.com**
+**Task:** to implement a cli tool that conversts `.json` file to `.csv`. Use Typescript.
 
-Phone: +375(29)884-02-02
 
-Previous work experience:
+**Example of usage**
 
-1. 08/2008 – 08/2010 - Polotsk State University - Department of Repair of Computers and Radio-Electronic Devices / **Electronics engineer**
+```bash
+node index.js input.json output.csv
+```
+Where input.json has the following structure:
 
-2. 11/2010 – 07/2015 - Stock Company SPECIAL DESIGN AND TECHNOLOGICAL BUREAU OF KOLTSOV (Nicole Group - St. Petersburg) – New Solutions Group / **Product design engineer**
+```js
+[{
+  id: '1',
+  name: 'Batman',
+  car: 'Batmobile'
+}, {
+  id: '2',
+  car: 'lada',
+}]
+```
 
-3. 04/2016 – present - Technoton Engineering LLC (R&D division of Technoton) / **Product design engineer**
+**Result:**
 
----
+```js
+id,name,car\n
+1,Batman,Batmobile\n
+2,,lada\n
+```
 
-If you want to see the full CV, please follow this link - [Anatol Dauliud CV](https://spidervs.github.io/rsschool-cv/)
+**Requirements:**
+
+You should always take columns from the first object in the list.
+
+**Extra:**
+
+- Usage of custom stream.
