@@ -1,19 +1,35 @@
-# Anatol Dauliud
+# Custom Lodash
 
-## Polotsk State University / Radio Engineering Faculty '2008 - Electronics engineer
+## Folder name: custom-lodash
 
-**E-mail: fuzzy003@gmail.com**
+Task: to implement 'custom' version of lodash library following next requirements:
 
-Phone: +375(29)884-02-02
+- **Usage of methods from `Array.prototype.*` or `Object.prototype.*` is strictly forbidden**.
+- You can create your own additional service functions (if needed).
+- You should use ES6+ features (any feature which supported by latest stable Chrome).
+- Lodash chain is out of scope
+- Please reuse as much of your code as possible
 
-Previous work experience:
+### Methods to implement:
 
-1. 08/2008 – 08/2010 - Polotsk State University - Department of Repair of Computers and Radio-Electronic Devices / **Electronics engineer**
+#### Arrays:
+  - chunk
+  - compact
+  - drop
+  - dropWhile
+  - take
+  - filter
+  - find
+  - includes
+  - map
+  - zip
+#### Objects:
+  - merge
+  - omit
+  - omitBy
+  - pick
+  - pickBy
+  - toPairs
 
-2. 11/2010 – 07/2015 - Stock Company SPECIAL DESIGN AND TECHNOLOGICAL BUREAU OF KOLTSOV (Nicole Group - St. Petersburg) – New Solutions Group / **Product design engineer**
-
-3. 04/2016 – present - Technoton Engineering LLC (R&D division of Technoton) / **Product design engineer**
-
----
-
-If you want to see the full CV, please follow this link - [Anatol Dauliud CV](https://spidervs.github.io/rsschool-cv/)
+#### Bonus:
+- filter 
