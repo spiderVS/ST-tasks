@@ -1,19 +1,36 @@
-# Anatol Dauliud
+# TODO List BE
 
-## Polotsk State University / Radio Engineering Faculty '2008 - Electronics engineer
+## Folder name: todolist-be
 
-**E-mail: fuzzy003@gmail.com**
+**Task: to implement an API for managing a to-do list.**
 
-Phone: +375(29)884-02-02
+**Approximate model:**
 
-Previous work experience:
+```js
+message String required,
+completed Boolean,
+id String|ObjectId,
+```
 
-1. 08/2008 – 08/2010 - Polotsk State University - Department of Repair of Computers and Radio-Electronic Devices / **Electronics engineer**
+**Required api:**
 
-2. 11/2010 – 07/2015 - Stock Company SPECIAL DESIGN AND TECHNOLOGICAL BUREAU OF KOLTSOV (Nicole Group - St. Petersburg) – New Solutions Group / **Product design engineer**
+`GET /todos/?(page=1&limit=10) returns all todos`
 
-3. 04/2016 – present - Technoton Engineering LLC (R&D division of Technoton) / **Product design engineer**
+`GET /todos/:id return one todo by id`
 
----
+`POST /todos creates a todo`
 
-If you want to see the full CV, please follow this link - [Anatol Dauliud CV](https://spidervs.github.io/rsschool-cv/)
+`PATCH /todos/:id patches todo by id`
+
+`DELETE /todos/:id deletes todo by id`
+
+**Requirements:**
+
+- App should be written using TypeScript.
+- Logging with some middleware is required.
+- Cors is required.
+- Usage of dotenv for configuration is mandatory.
+- You are supposed to use meaningful HTTP codes.
+
+**Extra:**
+- Use stream for serving data for GET method
