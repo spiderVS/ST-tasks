@@ -1,19 +1,22 @@
-# Anatol Dauliud
+# Load
 
-## Polotsk State University / Radio Engineering Faculty '2008 - Electronics engineer
+## Folder name: load
 
-**E-mail: fuzzy003@gmail.com**
 
-Phone: +375(29)884-02-02
+**Task:** to implement a **'custom'** version of the fetch.
 
-Previous work experience:
+**Example:**
 
-1. 08/2008 – 08/2010 - Polotsk State University - Department of Repair of Computers and Radio-Electronic Devices / **Electronics engineer**
+```js
+load('https://google.com', /* Options */ {
+  method: 'POST', /* one of the HTTP verbs, 'GET' by default */,
+  body /* Object, optional */,
+  responseType /* Stirng, optional, 'json' by default */
+}).then((/* custom response */ { status /* HTTP Sttatus */, body /* response of the given type */, statusText }) => constole.log(body))
+```
 
-2. 11/2010 – 07/2015 - Stock Company SPECIAL DESIGN AND TECHNOLOGICAL BUREAU OF KOLTSOV (Nicole Group - St. Petersburg) – New Solutions Group / **Product design engineer**
+### Requirements
 
-3. 04/2016 – present - Technoton Engineering LLC (R&D division of Technoton) / **Product design engineer**
-
----
-
-If you want to see the full CV, please follow this link - [Anatol Dauliud CV](https://spidervs.github.io/rsschool-cv/)
+- **Usage of the `fetch` is strictly forbidden**
+- **Usage of `async/await` is strictly forbidden**
+- Your function should support all response types that are supported by XMLHttpRequest
