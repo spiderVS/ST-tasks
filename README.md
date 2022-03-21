@@ -1,19 +1,28 @@
-# Anatol Dauliud
+# Deep copy
 
-## Polotsk State University / Radio Engineering Faculty '2008 - Electronics engineer
+## Folder name: deep-copy
 
-**E-mail: fuzzy003@gmail.com**
+Your task is to implement the function copy that creates a copy of an object.
 
-Phone: +375(29)884-02-02
+1. Usage of rest/spread operator is strictly forbidden
+2. Your implementation should implement a 'deep' copy if some property is an object you should also copy it. (Pay attention to arrays)
+3. Usage of any npm lib will result to -100%pts
+4. Usage of `structuredClone` is strictly forbidden
+5. Usage of `JSON.stringify`, `JSON.parse` is forbidden
 
-Previous work experience:
+Example:
 
-1. 08/2008 – 08/2010 - Polotsk State University - Department of Repair of Computers and Radio-Electronic Devices / **Electronics engineer**
+```js
+const obj = {
+ a: 4,
+ b: { 
+  c: 5,
+ },
+};
 
-2. 11/2010 – 07/2015 - Stock Company SPECIAL DESIGN AND TECHNOLOGICAL BUREAU OF KOLTSOV (Nicole Group - St. Petersburg) – New Solutions Group / **Product design engineer**
+const obj1 = copy(obj)
 
-3. 04/2016 – present - Technoton Engineering LLC (R&D division of Technoton) / **Product design engineer**
-
----
-
-If you want to see the full CV, please follow this link - [Anatol Dauliud CV](https://spidervs.github.io/rsschool-cv/)
+//obj1 is a newly created object
+obj1 === obj // false;
+obj1.b === obj.b // false;
+```
