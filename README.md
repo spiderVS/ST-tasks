@@ -1,13 +1,15 @@
-### TODO List FE
+# TODO List FE
+
+## Folder name: todolist-fe
 
 Simple ToDo list on Angular with HTTP-requests to back-end
 
-- TS
+- TypeScript
 - Angular
 - HTTP-requests to back-end - used mock-API `https://jsonplaceholder.typicode.com/todos`
 - **Custom** @Pipe - uppercase text
 - Custom @Directive - strikethrough text for checked todos
-- Used Interceptor for create URL
+- Use Interceptor for create URL
 - Template-driven form for todos
 
 ### Screenshot:
